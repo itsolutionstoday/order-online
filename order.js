@@ -18,22 +18,24 @@ $(document).mouseup(function(e) {
 });
 
 function CreateCalendarApp(lnk){ 
-	createnewCssElem(lnk);
-	$('#calendar-container-blanc').html(buildCalendarForm());
-	var calendar = new CalendarApp();
-
-  $('#calendar-container-blanc .float').click(function (){
-    $('#calendar-container-blanc .float-container').toggle();
-    $('#calendar-container-blanc .float').toggle();
-  })
-
-  $('body').css('max-width', '100%').css('overflow', 'hidden');
+  createnewCssElem('style.css');
   setTimeout(function(){
-    TweenMax.to("#calendar-container-blanc .float", 0.4, {rotation: 360});
-    $('#calendar-container-blanc .float').css('opacity', '1');
-  }, 200);
+    $('#calendar-container-blanc').html(buildCalendarForm());
+    var calendar = new CalendarApp();
 
-  BoxActiveLaunch();
+    $('#calendar-container-blanc .float').click(function (){
+      $('#calendar-container-blanc .float-container').toggle();
+      $('#calendar-container-blanc .float').toggle();
+    })
+
+    $('body').css('max-width', '100%').css('overflow', 'hidden');
+    setTimeout(function(){
+      TweenMax.to("#calendar-container-blanc .float", 0.4, {rotation: 360});
+      $('#calendar-container-blanc .float').css('opacity', '1');
+    }, 200);
+
+    BoxActiveLaunch();
+  }, 500);
 };
 
 function buildCalendarForm(){
