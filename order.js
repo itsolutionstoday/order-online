@@ -19,6 +19,7 @@ $(document).mouseup(function(e) {
 
 function CreateCalendarApp(lnk){ 
   createnewCssElem('style.css');
+  $('#calendar-container-blanc').css('opacity', 0);
   setTimeout(function(){
     $('#calendar-container-blanc').html(buildCalendarForm());
     var calendar = new CalendarApp();
@@ -35,6 +36,7 @@ function CreateCalendarApp(lnk){
     }, 200);
 
     BoxActiveLaunch();
+    $('#calendar-container-blanc').css('opacity', 1);
   }, 500);
 };
 
